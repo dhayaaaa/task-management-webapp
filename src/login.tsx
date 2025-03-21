@@ -54,10 +54,14 @@ function Login() {
             disabled={loading}
           >
             <img src={google} className="googlelogo" alt="Google Logo" />
-            <span>{loading ? "Signing in..." : "Continue with Google"}</span>
+            <span className="logingoogle">
+              {loading ? "Signing in..." : "Continue with Google"}
+            </span>
           </button>
         </div>
         <div className="images">
+          <img src={circle} className="circles2" alt="Background Circles" />
+          <img src={circle} className="circles1" alt="Background Circles" />
           <img src={circle} className="circles" alt="Background Circles" />
         </div>
         <img src={screenshot} className="screens" alt="Task List Screenshot" />
