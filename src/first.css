@@ -1,0 +1,865 @@
+
+.task-buddy {
+  margin: 0;
+  background-color: white;
+position: relative;
+
+}
+
+/*headsection..............................................*/
+header {
+  display: flex;
+  color: black;
+  justify-content: space-between;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+.left{
+    display: flex;
+}
+#list{
+    display: flex;
+    align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+#list::after{
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #077b32;
+  position: absolute;
+  left: 8px;
+  bottom: 8px;
+  transition: width 0.3s ease;
+}
+#board::after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #077b32;
+  position: absolute;
+  left: 15px;
+  bottom: 8px;
+  transition: width 0.3s ease;
+}
+#list.active-link::after {
+  width: 45px;
+}
+
+#board.active-link::after {
+  width: 60px;
+}
+#list h5{
+    width: 16px;
+}
+#board h5{
+    width: 16px;
+}
+.listicon{
+    position: relative;
+    
+    
+}
+.listicon1{
+  padding: 5px;
+  
+}
+
+.boardicon{
+    width: 30px;
+    height: 20px;
+}
+#board{
+    display: flex;
+    align-items: center;
+    padding-left: 9px;
+    cursor: pointer;
+  position: relative;
+}
+.profile img{
+    border-radius: 50px;
+    width: 36px; height:36px
+    
+}
+.tasklogo img{
+position: absolute;
+top: 5px;
+}
+.tasklogo span{
+  color: black;
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  margin-left: 30px;
+}
+.profile span{
+  font-size: 16px;
+  font-weight: 600;
+  padding-left: 6px;
+  padding-right: 10px;
+  color: #00000099;
+  cursor: pointer;
+}
+.profile{
+    background: transparent;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10px;
+    
+}
+.logoutbutton{
+width: 103px;
+height: 40px;
+border-radius: 12px;
+border-width: 2px;
+background-color: #FFF9F9;
+
+display: flex;
+
+}
+.logoutbutton h5{
+ color: black;
+font-weight: 600;
+font-size: 12px;
+line-height: 140%;
+letter-spacing: 0%;
+}
+
+.logouticon{
+    width: 20px;
+    height: 19px;
+    padding-right: 6px;
+    
+}
+/*........................................................*/
+
+/*filter section..............................................*/
+
+
+
+
+
+
+
+
+
+
+
+.filters {
+  margin: 20px 10px 20px 10px;
+  display: flex;
+  justify-content: space-between;
+}
+.filters select option{
+    background-color: #077b32;
+
+}
+.leftfilter{
+    display: flex;
+    
+}
+.twobars{
+    display: flex;
+}
+.categorybar{
+    padding-right: 10px;
+}
+
+select{
+    background: transparent;
+    color: black;
+    border-radius: 60px;
+    padding: 5px 8px 5px 8px;
+    
+}
+.boxx{
+    width: 204px;
+    height: 36px;
+    border-radius: 60px;
+    box-sizing: border-box;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  background-color: rgb(255, 255, 255);
+  background-image:url('./assets/search_icon.svg');
+  background-repeat: no-repeat;
+  padding: 12px 20px 12px 40px;
+  background-position: 15px 7px; 
+  color: black;
+}
+.addbutton button{
+    background-color: #7B1984;
+    border-radius: 41px;
+    margin-left: 10px;
+    width: 152px;
+    height: 40px;
+    
+}
+.addbutton1 button{
+    background-color: #7B1984;
+    border-radius: 41px;
+    margin-left: 10px;
+    width: 152px;
+    height: 40px;
+}
+.addbutton{
+    display: flex;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.buttonseditdelete{
+  position: absolute;
+  left: 88%;
+  margin-top: -10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  
+}
+.buttonseditdelete h4{
+  background: transparent;
+  background-color: #FFF9F9;
+  color: #000000;
+  padding: 10px;
+  display: flex;
+  width: 87px;
+  height: auto;
+  cursor: pointer;
+  font-size: 12px;
+
+}
+.buttonseditdelete1{
+  position: absolute;
+  margin-top: -10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  
+}
+.buttonseditdelete1 h4{
+  background: transparent;
+  background-color: #FFF9F9;
+  color: #000000;
+  padding: 10px;
+  display: flex;
+  width: 87px;
+  height: auto;
+  cursor: pointer;
+  font-size: 12px;
+}
+.addbutton .add{
+    background-color: #7B1984;
+    border-radius: 41px;
+    width: 84px;
+    height: 30px;
+    font-size: 14px;
+    padding: 0;
+}
+.addbutton .cancelbutton{
+    background:transparent;
+    color: #000000;
+    width: 84px;
+    height: 30px;
+    font-size: 14px;
+    padding: 0;
+    background-color: #F4F4F4;
+    
+}
+.add:focus{
+    outline: none;
+    border: none;
+}
+.cancelbutton:focus{
+outline: none;
+    border: none;
+}
+
+.searchicon{
+    width: 18px;
+    padding-right: 2px;
+    
+}
+.leftfilter h5{
+  color: black;
+  padding-right: 3px;
+}
+.rightside{
+    display: flex;
+}
+/*........................................................*/
+.line{
+    width: 100%;
+    height: 1px;
+    background-color: #0000001A;
+    
+    
+}
+
+
+.task-lists {
+  margin-top: 10px;
+}
+
+#task-list {
+  margin-bottom: 20px;
+  padding: 1px;
+  
+}
+.task-listopen{
+    margin-bottom: 20px;
+  padding: 10px;
+  display: block;
+  
+}
+.task-listclose{
+    margin-bottom: 20px;
+  padding: 10px;
+  display: none;
+}
+
+.check{
+  width: 18px;
+  height: 18px;
+  margin-top: 13px;
+}
+.dragicon{
+  width: 21px;
+  height: 15px;
+  margin-top: 15px;
+  
+}
+/*........................................................*/
+.task-section {
+  padding: 20px;
+  border-radius: 8px;
+}
+
+.add-task {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #F1F1F1;
+  font-size: 14px;
+  
+}
+.tasklist{
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    color: #000000;
+    font-weight: 600;
+    height: 35px;
+    background-color:#FAC3FF ;
+    border-radius: 12px 12px 0 0;
+    align-items: center;
+    padding: 10px;
+}
+.tasklist2{
+    padding: 30px;
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    color: #000000;
+    font-weight: 600;
+    height: 35px;
+    background-color:#85D9F1 ;
+    border-radius: 12px 12px 0 0;
+    align-items: center;
+    padding: 10px;
+}
+.tasklist3{
+    padding: 30px;
+    display:flex;
+    justify-content: space-between;
+    width:100%;
+    color: #000000;
+    font-weight: 600;
+    height: 35px;
+    background-color:#CEFFCC ;
+    border-radius: 12px 12px 0 0;
+    align-items: center;
+    padding: 10px;
+}
+.bgbox{
+  background-color: #DDDADD;
+  width: fit-content;
+  padding: 2px 10px;
+  height: auto;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.checkboxsize{
+  width: 18px;
+  height: 18px;
+  margin-top: 13px;
+  background: transparent;
+  
+}
+.checkboxcheck{
+  display: flex;
+  padding-left: 10px;
+  
+}
+.titilename{
+  font-size: 14px;
+  padding-left: 6px;
+  text-align: left;
+}
+.nameunderline{
+  text-decoration: line-through;
+}
+.imageoption{
+  width: 10px;
+  margin-right: 200px;
+}
+.task-item {
+  display: grid;
+    grid-template-columns: 3fr 2fr 1.5fr 3.5fr 2.5fr 1fr;
+  padding: 1px 0;
+  width: 1227px;
+  height: 38px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  color: #000000;
+  
+}
+.task-item .bgbox1 span{
+  text-decoration: line-through;
+}
+
+
+.add-task button{
+    background: transparent;
+    color: black;
+    
+    
+    
+}
+.add-task button:focus{
+    outline: none;
+    border: none;
+}
+input:focus {
+    outline: none;
+    border: none;
+}
+
+
+.addtitlefalse .enter{
+    display: none;
+    justify-content: space-between;
+    border: none;
+    
+}
+.section2{
+    background-color: #0000001A;
+}
+
+/*.................................Table...........*/
+.tophead{
+    width: 85%;
+    color: #00000099;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+
+}
+.tophead1{
+    width: 80%;
+    color: #00000099;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px;
+    align-items: center;
+}
+.enter{
+  border-top: 1px solid #0000001A;
+    border-bottom: 1px solid #0000001A;
+
+}
+.enter .tophead{
+    width: 100%;
+    color: #00000099;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid #00000021;
+    
+
+}
+.n1{
+    width: 67px;
+    height: 18px;
+    font-size: 14px;
+    padding-left: 10px;
+  
+}
+.n1 input{
+  background: transparent;
+  border: none;
+  color: #000000;
+}
+.n2{
+    width: 98px;
+    height: 30px;
+    
+    font-size: 12px;
+}
+.n2 input{
+  background: transparent;
+  border: 1px #00000033;
+  color: #000000;
+  padding: 6px;
+  border-radius: 40%;
+}
+.plus{
+  border-radius: 50%;
+  cursor: pointer;
+ color: #000000;
+  padding:0 3px 0 3px;
+  
+}
+.plus:hover{
+  border: 1px solid #00000033;
+}
+.editdeletebutton{
+  background: transparent;
+  width: 16px;
+  height: 16px;
+}
+    
+
+
+.arrow {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+  cursor: pointer;
+  z-index: 0;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg); 
+}
+.arrow.moved {
+  transform: rotate(180deg);
+  -webkit-transform: rotate(225deg);
+}
+/*.......................................*/
+#task-list{
+     font-size: 14px;
+     font-weight: 500;
+    background-color: #F1F1F1;
+    
+    
+}
+
+
+
+
+
+/* App.css */
+.app-container {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 20px;
+  width: 300px;
+  margin: 20px auto;
+  text-align: center;
+}
+
+.open-button {
+  padding: 10px 15px;
+  background-color: #28a745;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.open-button:hover {
+  background-color: #218838;
+}
+
+.class-content {
+  margin-top: 10px;
+  padding: 10px;
+  border: 1px solid #007bff;
+  border-radius: 5px;
+  background-color: #f8f9fa;
+}
+
+/*................................................*/
+.status-options{
+  width: auto;
+  height: auto;
+  background-color: white;
+  margin-left: 14px;
+  margin-top: -12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+  padding:10px;
+  text-align: left;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+.status-options1{
+  width: auto;
+  height: auto;
+  background-color: white;
+  margin-left: 550px;
+  margin-top: 100px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #000000;
+  padding:10px;
+  text-align: left;
+  position: absolute;
+  z-index: 1;
+  cursor: pointer;
+}
+.status-options option{
+  padding: 2px;
+}
+
+
+/*/////////////////////////////////////////////////////////////////////////////////////////////////*/
+
+
+.fullcontent{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  
+  
+}
+.fullcontent > div {
+  background-color: #f1f1f1;
+  padding: 12px;
+  font-size: 14px;
+  text-align: left;
+  width: 337px;
+  min-height: 500px;
+  max-height: auto;
+  border-radius: 12px;
+margin: 10px;
+color: #000000ac;
+}
+
+.fullcontent > div h3{
+  
+  width: fit-content;
+  padding: 2px 7px 2px 7px;
+  border-radius: 4px;
+}
+.fullcontent .box1 h3{
+  background-color: #FAC3FF;
+}
+.fullcontent .box2 h3{
+  background-color: #85D9F1;
+}
+.fullcontent .box3 h3{
+  background-color: #A2D6A0;
+}
+
+.boardtasktitle{
+  display: flex;
+  justify-content: space-between;
+   
+}
+.boardtasktitle span{
+  font-size: 16px;
+  font-weight: 700;
+}
+.categorydate{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 52px;
+}
+.categorydate span{
+  font-size: 10px;
+}
+.individual{
+     width: 312px;
+  height: 110px;
+  background-color: #FFFFFF;
+  padding: 10px;
+  margin: 10px 0 10px 0;
+  border-radius: 12px;
+}
+.boxbox1{
+ 
+}
+@media screen and (max-width: 610px){
+.addbutton1 button {
+    background-color: #7B1984;
+    border-radius: 41px;
+    top: 50px;
+    position: absolute;
+   right: 18px;
+}
+
+}
+
+
+
+@media screen and (max-width: 470px){
+  #root {
+  margin:0;
+  padding:0;
+  text-align: center;
+
+}
+.head{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px; 
+    background-color: #FAEEFC;
+    height: 52px;
+    
+}
+.logoutbutton{
+width: 103px;
+height: 40px;
+border-radius: 12px;
+border-width: 2px;
+background-color: #FFF9F9;
+visibility: hidden;
+
+}
+.profile span{
+  font-size: 0;
+}
+.profile img{
+  width: 25px;
+  height: 25px;
+  margin-left: 10px;
+}
+.tasklogo img{
+  display: none;
+}
+.tasklogo span{
+  font-size: 16px;
+  font-weight: 600;
+}
+.left{
+    display: none;
+}
+.boxx{
+    width:204px;
+    height: 36px;
+    border-radius: 60px;
+    box-sizing: border-box;
+  border: 2px solid #ccc;
+  font-size: 16px;
+  background-color: rgb(255, 255, 255);
+  background-image:url('./assets/search_icon.svg');
+  padding: 12px 20px 12px 40px;
+  background-position: 15px 7px; 
+  color: black;
+  margin-top: 55px;
+
+
+  
+}
+.addbutton1 button{
+    background-color: #7B1984;
+    border-radius: 41px;
+    margin-left: -125px;
+    width: 86px;
+    height: 32px;
+    position: absolute;
+    top: 66px;
+    right: 10px;
+    font-size: 10px;
+}
+.addbutton{
+    display: flex;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+.leftfilter h5{
+  color: black;
+  padding-right: 3px;
+  padding-left: 10px;
+  position: absolute;
+  top: 110px;
+  font-size: 12px;
+}
+.twobars{
+    display: flex;
+    margin-top: 15px;
+    position: absolute;
+    margin-left: 10px;
+    
+}
+.tophead{
+    display: none;
+}
+.line{
+  display: none;
+}
+.tasklist{
+    
+    justify-content: space-between;
+    width:100%;
+    color: #000000;
+    font-weight: 600;
+    height: 35px;
+    background-color:#FAC3FF ;
+    border-radius: 12px 12px 0 0;
+    align-items: center;
+    padding: 10px;    
+}
+
+.task-section {
+  padding: 0 10px 0 10px;
+  border-radius: 8px;
+}
+.hi,.duedate,.dragicon,.editdeletebutton,.enter,.tophead1,.add-task,.bgbox,.waste,.status-options1{
+display: none;
+}
+.checkboxsize{
+  width: 18px;
+  height: 18px;
+  margin-right:10px ;
+  align-items: center;
+  padding-left: 5px;
+  margin-left: 10px;
+  margin-bottom: 5px;
+  
+}
+.task-item {
+    grid-template-columns: 1fr;
+  height: 38px;
+  align-items: center;
+  border-bottom: 1px solid #eee;
+  color: #000000;
+  font-size: 14px;
+  
+}
+.checkboxcheck{
+  border-bottom: 1px solid #0000001A;
+  align-items: center;
+  
+  
+}
+.check{
+  width: 18px;
+  height: 18px;
+  margin-bottom: 6px;
+}
+
+}
