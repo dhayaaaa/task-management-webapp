@@ -8,13 +8,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 99999;
 }
 
 .popup-content {
-  background: rgb(255, 255, 255);
+  background: #fff;
   border-radius: 8px;
-  width: 500px;
-  height: 520px;
+
+  max-width: 95%;
 }
 
 .popup-header {
@@ -22,126 +23,94 @@
   justify-content: space-between;
   align-items: center;
 }
+
 .popup-header h2 {
   font-size: 20px;
   color: black;
   font-weight: 600;
-  padding-left: 10px;
 }
 
 .listicon1 {
   cursor: pointer;
 }
+
 .line1 {
-  width: auto;
-  padding: 0;
-  margin: 0;
   height: 1px;
   background-color: #0000001a;
+  margin: 0;
+  padding: 0;
 }
-.form-group input {
-  margin-bottom: 5px;
-  margin-top: 10px;
-  height: 28px;
-  width: 480px;
+
+.form-group input,
+.form-group textarea,
+.form-group select {
   background-color: #f1f1f15c;
   border: 1px solid #00000021;
-  padding-left: 10px;
-  color: black;
   border-radius: 8px;
-  margin-left: 10px;
+  color: black;
+  font-size: 12px;
+
 }
+
 .form-group textarea {
-  height: 80px;
-  width: 480px;
-  background-color: #f1f1f15c;
-  border: 1px solid #00000021;
-  padding-left: 10px;
   padding-top: 4px;
-  border-radius: 8px;
-  color: black;
-  margin-top: 10px;
-  margin-left: 10px;
+  resize: vertical;
 }
 
 .word-count {
   font-size: 12px;
   color: gray;
 }
+
 .contentsshow {
   display: flex;
   justify-content: space-between;
 }
-.form-group1 {
-  text-align: left;
-}
-.form-group2 {
-  text-align: left;
-}
-.form-group3 {
-  text-align: left;
-}
+
+.form-group1,
+.form-group2,
+.form-group3,
 .form-group4 {
-  margin-top: 30px;
   text-align: left;
 }
-.form-group1 label {
+
+.form-group1 label,
+.form-group2 label,
+.form-group3 label {
   padding-left: 10px;
   font-size: 12px;
-  color: black;
-}
-.form-group2 label {
-  font-size: 12px;
-  color: black;
-}
-.form-group3 label {
-    font-size: 12px;
   color: black;
 }
 
 .form-group1 button {
   width: 70px;
-  height: fit-content;
-  margin-top: 5px;
   font-size: 10px;
-  color: black;
-  background: rgb(209, 209, 209);
-  background-color: #f1f1f15c;
+  background: #f1f1f15c;
   border: 1px solid #00000021;
-}
-.form-group2 input {
+  color: black;
   margin-top: 5px;
-  height: 28px;
-  border-radius: 8px;
-  background: transparent;
-  background-color: #f1f1f15c;
-  border: 1px solid #00000021;
+}
+
+.form-group2 input {
   width: 140px;
-  padding-left: 10px;
-  padding-right: 3px;
-  color: black;
-  font-size: 12px;
 }
 
 .form-group3 select {
-  margin-top: 5px;
-  margin-right: 10px;
-  height: 28px;
   width: 120px;
-  background-color: #f1f1f15c;
-  border: 1px solid #00000021;
-  font-size: 12px;
 }
+
 .form-group4 .Attachment {
   font-size: 12px;
   color: black;
   position: relative;
   padding-right: 410px;
   text-align: left;
+  margin-top: 10px;
+      margin-left: 10px;
 }
 
 .boxinside {
-  margin-top: 3px;
+  margin-top: 10px;
   height: 30px;
   width: 480px;
   border-radius: 8px;
@@ -149,171 +118,91 @@
   border: 1px solid #00000021;
   font-size: 12px;
   padding-top: 5px;
+      margin-left: 10px;
 }
+
 .boxinside label span {
   color: blue;
   text-decoration: underline;
+  
 }
+
 .endbuttons {
   margin-top: 24%;
   height: 63px;
-  width: auto;
-  padding-top: 12px;
+  padding: 12px 0 0 250px;
   background-color: #f1f1f15c;
   border: 1px solid #00000021;
-  padding-left: 250px;
-  font-size: 14px;
   border-radius: 0px 0px 10px 10px;
 }
+
 .endbuttons button {
-  width: 102px;
-  height: 35px;
-  padding-top: 5px;
+  
 }
+
 .endbuttons .cancelbutton1 {
   background-color: white;
   border: 1px solid #00000021;
   color: black;
 }
 
+/* Mobile Styles */
 @media screen and (max-width: 470px) {
   .popup-content {
-    background: rgb(255, 255, 255);
     border-radius: 20px;
-    width: 366px;
-    height: 550px;
-    margin-right: 53px;
     position: absolute;
-    top: 70px;
-    left: 40px;
-    padding-top: 5px;
+        left: 4px;
+        top: 10px;
   }
-  .form-group input {
-  margin-bottom: 5px;
-  margin-top: 10px;
-  height: 38px;
-  width: 340px;
-  background-color: #f1f1f15c;
-  border: 1px solid #00000021;
-  padding-left: 10px;
-  color: black;
-  border-radius: 8px;
-}
-.form-group textarea {
-  height: 80px;
-  width: 340px;
-  background-color: #f1f1f15c;
-  border: 1px solid #00000021;
-  padding-left: 10px;
-  padding-top: 4px;
-  border-radius: 8px;
-  color: black;
-  margin-top: 10px;
-}
-.boxinside {
-  margin-top: 120px;
-  height: 30px;
-  width: 340px;
-  border-radius: 8px;
-  background-color: #f1f1f15c;
-  border: 1px solid #00000021;
-  font-size: 12px;
-  padding-top: 5px;
-}
-.endbuttons {
-  height: 63px;
-  width: 367px;
-  padding-top: 12px;
-  background-color: #f1f1f15c;
-  border: 1px solid #00000021;
-  margin-top: 26px;
-  font-size: 14px;
-  border-radius:  0 0 20px 20px;
-  
-  
-}
-.endbuttons .createbutton1 {
-    top: 500px;
-  width: 102px;
-  height: 35px;
-  padding-top: 5px;
-  
-}
-.endbuttons .cancelbutton1 {
-  background-color: white;
-  border: 1px solid #00000021;
-  color: black;
-  width: 102px;
-  height: 35px;
-  top: 500px;
-  left: 260px;
-}
-.form-group1 button {
-  width: 61px;
-  height: fit-content;
-  margin-top: 5px;
-  font-size: 10px;
-  position: relative;
-  top: 1%;
-  left: 200px;
-  color: black;
-  background: rgb(209, 209, 209);
-  background-color: #f1f1f15c;
-  border: 1px solid #00000021;
-  
-}
-.form-group2 input{
-  margin-top: 2px;
-  height: 28px;
-  border-radius: 8px;
-  background: transparent;
-  background-color: #f1f1f15c;
-  border: 1px solid #00000021;
-  width: 140px;
-  padding-left: 10px;
-  padding-right: 3px;
-  color: black;
-  font-size: 12px;
-  display: flex;
-  position: absolute;
-  top: 50%;
-  left: 15px;
-}
-.form-group2 label{
-    position: absolute;
-  top: 47%;
-  left: 15px;
-}
 
-.form-group3 select {
-  margin-top: 2px;
-  margin-right: 10px;
-  height: 28px;
-  width: 120px;
-  background-color: #f1f1f15c;
-  border: 1px solid #00000021;
-  font-size: 12px;
-  position: absolute;
-  top: 63%;
-  left: 15px;
-  
-}
-.form-group3 label {
-position: absolute;
-  top: 60%;
-  left: 15px;
-}
-.form-group4 .Attachment {
-  font-size: 12px;
-  color: black;
-  position: relative;
-  padding-right: 410px;
-  text-align: left;
-  top: 120px;
-}
-.contentsshow {
- display: flex;
- justify-content: left;
-  
-}
+  .form-group input,
+  .form-group textarea,
+  .boxinside {
+    width: 93%;
+  }
+
+  .boxinside {
+    margin-top: 78px;
+  }
+
+  .form-group textarea {
+            height: 65px;
+  }
+
+  .endbuttons {
+    width: 343px;
+        margin-top: 46px;
+        display: inline-flex;
+    border-radius: 0 0 20px 20px;
+    padding: 9px;
+  }
+
+  .form-group1 button {
+    width: 61px;
+    position: relative;
+    left: 10px;
+    top: -4px;
+  }
+
+  .form-group2 label,
+  .form-group2 input,
+  .form-group3 label,
+  .form-group3 select {
+    position: absolute;
+    left: 15px;
+  }
+
+  .form-group2 label { top: 41%;
+        left: 1px; }
+  .form-group2 input { top: 44%;left:10px; }
+  .form-group3 label { top: 50%;left: 1px; }
+  .form-group3 select { top: 53%;left:10px; }
+
+  .form-group4 .Attachment {
+    top: 75px;
+  }
+
+  .contentsshow {
+    justify-content: left;
+  }
 }

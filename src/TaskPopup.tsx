@@ -18,13 +18,12 @@ const TaskPopup: React.FC<TaskPopupProps> = ({
   const [task, setTask] = useState({
     title: "",
     description: "",
-    category: "Work",
+    category: "",
     dueDate: "",
-    status: "TO-DO",
+    status: "",
     file: null as File | null,
   });
 const storage = getStorage();
-
 const uploadFile = async (file: File) => {
   const storageRef = ref(storage, `files/${file.name}`);
   await uploadBytes(storageRef, file);
@@ -56,17 +55,28 @@ const uploadFile = async (file: File) => {
       setTask({ ...task, file: files[0] });
     }
   };
+const handleChange = (
+  e: React.ChangeEvent<
+    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+  >
+) => {
+setStatus(e.target.value);
 
+  const { name, value } = e.target;
+  setTask((prevTask) => ({
+    ...prevTask,
+    [name]: value,
+  }));
+
+  // Special case for status dropdown
+  if (name === "status") {
+    setStatus(value);
+  }
+};
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setTask({ ...task, file: e.target.files[0] });
     }
-  };
-  const handleChange = (
-    e: React.ChangeEvent<HTMLSelectElement |HTMLInputElement | HTMLTextAreaElement
-    >
-  ) => {
-    setStatus(e.target.value);
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -136,19 +146,21 @@ const uploadFile = async (file: File) => {
               <div className="form-group1">
                 <label>Task Category*</label>
                 <br />
-                <button 
-                  type="button"
-                  onClick={() => setTask({ ...task, category: "Personal" })}
-                >
-                  Personal
-                </button>
+                <div className="sep">
+                  <button
+                    type="button"
+                    onClick={() => setTask({ ...task, category: "Personal" })}
+                  >
+                    Personal
+                  </button>
 
-                <button
-                  type="button"
-                  onClick={() => setTask({ ...task, category: "Work" })}
-                >
-                  Work
-                </button>
+                  <button
+                    type="button"
+                    onClick={() => setTask({ ...task, category: "Work" })}
+                  >
+                    Work
+                  </button>
+                </div>
               </div>
 
               <div className="form-group2">
@@ -170,7 +182,9 @@ const uploadFile = async (file: File) => {
                 <br />
                 <select
                   id="status-select"
-                  value={status}
+                  name="status"
+                  onChange={handleStatusChange}
+                  value={task.status}
                   onChange={handleChange}
                 >
                   <option value="">Choose</option> {/* Default option */}
@@ -183,16 +197,6 @@ const uploadFile = async (file: File) => {
 
             <div
               className="form-group4"
-              onDragEnter={handleDragEnter}
-              onDragLeave={handleDragLeave}
-              onDragOver={(e) => e.preventDefault()}
-              onDrop={handleDrop}
-              style={{
-                border: dragging ? "2px dashed blue" : "",
-                padding: "10px",
-                textAlign: "center",
-                cursor: "pointer",
-              }}
             >
               <label className="Attachment">Attachment</label>
               <div className="boxinside">
