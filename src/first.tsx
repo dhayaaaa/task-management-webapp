@@ -75,7 +75,6 @@ const First: React.FC = () => {
     COMPLETED: tasks.filter((task) => task.status === "COMPLETED"),
   };
 
-
   const toggleTodoVisibility = () => {
     setIsTodoVisible(!isTodoVisible);
 
@@ -122,7 +121,7 @@ const First: React.FC = () => {
     try {
       await signOut(auth);
       console.log("User  logged out successfully");
-      navigate("/"); 
+      navigate("/");
     } catch (error) {
       console.error("Error during logout:", error);
     }
@@ -173,12 +172,11 @@ const First: React.FC = () => {
   };
 
   const handleCancel = () => {
-  
     setTaskInput("");
     setDueDate("");
     setShowOptions(false);
     setSelectedStatus("+");
-    setSelStatus("+"); 
+    setSelStatus("+");
   };
   useEffect(() => {
     const fetchTasks = async () => {
@@ -213,7 +211,7 @@ const First: React.FC = () => {
 
     const updatedTasks = Array.from(tasks2);
     const [movedTask] = updatedTasks.splice(result.source.index, 1);
-    movedTask.status = result.destination.droppableId; 
+    movedTask.status = result.destination.droppableId;
     updatedTasks.splice(result.destination.index, 0, movedTask);
 
     setTasks(updatedTasks);
@@ -442,7 +440,7 @@ const First: React.FC = () => {
                 .filter((task) => task.status === "TO-DO")
                 .map((task) => (
                   <div key={task.id} className="checkboxcheck">
-                    <input className="checkboxsize" type="checkbox"/>
+                    <input className="checkboxsize" type="checkbox" />
                     <img src={dragicon} className="dragicon" />
                     <img src={checkmark} className="check" />
                     <div className="task-item">
@@ -459,7 +457,7 @@ const First: React.FC = () => {
                       >
                         {task.status}
                       </span>
-                      {showOptions1 === task.id && ( 
+                      {showOptions1 === task.id && (
                         <div className="status-options1">
                           <div
                             onClick={() => changeTaskStatus(task.id, "TO-DO")}

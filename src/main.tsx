@@ -13,7 +13,7 @@ if (container) {
   root.render(
     <StrictMode>
       <BrowserRouter>
-      <App />
+        <App />
       </BrowserRouter>
     </StrictMode>
   );
@@ -22,7 +22,6 @@ if (container) {
     "Root container not found! Did you forget <div id='root'></div> in index.html?"
   );
 }
-
 
 function Main() {
   const navigate = useNavigate();

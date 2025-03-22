@@ -1,9 +1,9 @@
 // TaskPopup.tsx
-import React, { useState,DragEvent } from "react";
+import React, { useState, DragEvent } from "react";
 import { db } from "./firebase-config"; // Import your Firebase configuration
 import { collection, addDoc } from "firebase/firestore";
 import "./TaskPopup.css"; // Import your CSS for styling
-import closeicon from "/Close Icon.svg"
+import closeicon from "/Close Icon.svg";
 import { getStorage, ref, uploadBytes, getDownloadURL } from "firebase/storage";
 interface TaskPopupProps {
   isOpen: boolean;
@@ -23,16 +23,16 @@ const TaskPopup: React.FC<TaskPopupProps> = ({
     status: "",
     file: null as File | null,
   });
-const storage = getStorage();
-const uploadFile = async (file: File) => {
-  const storageRef = ref(storage, `files/${file.name}`);
-  await uploadBytes(storageRef, file);
-  const fileURL = await getDownloadURL(storageRef);
-  return fileURL; // Return the file URL for Firestore
-};
+  const storage = getStorage();
+  const uploadFile = async (file: File) => {
+    const storageRef = ref(storage, `files/${file.name}`);
+    await uploadBytes(storageRef, file);
+    const fileURL = await getDownloadURL(storageRef);
+    return fileURL; // Return the file URL for Firestore
+  };
   const [description, setDescription] = useState("");
   const [dragging, setDragging] = useState(false);
-    const [status, setStatus] = useState("");
+  const [status, setStatus] = useState("");
 
   // Drag and Drop Handlers
   const handleDragEnter = (e: DragEvent) => {
@@ -55,24 +55,24 @@ const uploadFile = async (file: File) => {
       setTask({ ...task, file: files[0] });
     }
   };
-const handleChange = (
-  e: React.ChangeEvent<
-    HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
-  >
-) => {
-setStatus(e.target.value);
+  const handleChange = (
+    e: React.ChangeEvent<
+      HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement
+    >
+  ) => {
+    setStatus(e.target.value);
 
-  const { name, value } = e.target;
-  setTask((prevTask) => ({
-    ...prevTask,
-    [name]: value,
-  }));
+    const { name, value } = e.target;
+    setTask((prevTask) => ({
+      ...prevTask,
+      [name]: value,
+    }));
 
-  // Special case for status dropdown
-  if (name === "status") {
-    setStatus(value);
-  }
-};
+    // Special case for status dropdown
+    if (name === "status") {
+      setStatus(value);
+    }
+  };
   const handleFileChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     if (e.target.files) {
       setTask({ ...task, file: e.target.files[0] });
@@ -195,9 +195,7 @@ setStatus(e.target.value);
               </div>
             </div>
 
-            <div
-              className="form-group4"
-            >
+            <div className="form-group4">
               <label className="Attachment">Attachment</label>
               <div className="boxinside">
                 <input
