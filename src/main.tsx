@@ -4,7 +4,7 @@ import { useNavigate } from "react-router-dom";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import App from "./App.tsx";
-import { BrowserRouter } from "react-router-dom";
+
 
 const container = document.getElementById("root");
 
@@ -12,9 +12,7 @@ if (container) {
   const root = ReactDOM.createRoot(container);
   root.render(
     <StrictMode>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
+      <App />
     </StrictMode>
   );
 } else {
@@ -22,6 +20,7 @@ if (container) {
     "Root container not found! Did you forget <div id='root'></div> in index.html?"
   );
 }
+
 
 function Main() {
   const navigate = useNavigate();
